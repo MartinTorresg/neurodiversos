@@ -10,34 +10,40 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '18'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Build Angular
-        run: |
-          npm run build -- --base-href "/[nombre-repo]/" --configuration production
-          # Si usas rutas con Hash:
-          # npm run build -- --base-href "/[nombre-repo]/" --configuration production --output-path docs
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v3
+      - name: Build Angular project
+        run: npm run build -- --base-href="/<neurodiversos>/"
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist/[nombre-proyecto]' # Reemplaza con el nombre de tu proyecto Angular
+          path: ./dist/<neurodiversos>
 
-      - name: Deploy
-        uses: actions/deploy-pages@v2
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
