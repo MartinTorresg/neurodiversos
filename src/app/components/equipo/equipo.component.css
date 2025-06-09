@@ -1,0 +1,28 @@
+/* team-section.component.css */
+.team-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-card-image {
+  background-color: #f5f5f5; /* Color de fondo mientras carga la imagen */
+}
+
+.team-card-image img {
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-card-image img {
+  transform: scale(1.05);
+}
+
+.team-social-icon {
+  transition: transform 0.2s ease;
+}
+
+.team-social-icon:hover {
+  transform: scale(1.1);
+}

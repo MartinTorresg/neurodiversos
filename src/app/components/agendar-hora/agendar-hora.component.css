@@ -1,0 +1,38 @@
+/* Animación de pulso para el icono destacado */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Efectos hover para las tarjetas */
+.group:hover .transition-all {
+  transition: all 0.3s ease;
+}
+
+/* Degradado para la tarjeta destacada */
+.bg-gradient-to-r {
+  background-size: 200% auto;
+  transition: background-position 0.5s ease;
+}
+
+.group:hover .bg-gradient-to-r {
+  background-position: right center;
+}
+
+/* Sombra personalizada para los botones */
+.hover\:shadow-\[#e3193b\]\/20:hover {
+  box-shadow: 0 10px 15px -3px rgba(227, 25, 59, 0.2);
+}
+
+/* .hover\:shadow-\[#951c8d\]\/20:hover {
+  box-shadow: 0 10px 15px -3px rgba(149, 28, 141, 0.2);
+} */
+
+.hover\:shadow-\[#f6c400\]\/20:hover {
+  box-shadow: 0 10px 15px -3px rgba(246, 196, 0, 0.2);
+}

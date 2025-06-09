@@ -1,0 +1,133 @@
+<section id="faq" class="py-20 bg-gradient-to-b from-white to-[#f8f9ff]">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4 font-poppins text-[#2c2c2c]">Preguntas Frecuentes</h2>
+      <div class="w-32 h-1.5 bg-gradient-to-r from-[#2eaae5] to-[#4d3ca5] mx-auto rounded-full"></div>
+      <p class="mt-6 text-[#2c2c2c]/80 max-w-2xl mx-auto text-lg">
+        Resolvemos tus dudas más comunes sobre nuestros servicios y la neurodiversidad.
+      </p>
+    </div>
+    
+    <div class="max-w-4xl mx-auto space-y-4">
+      <!-- Pregunta 1 -->
+      <div class="faq-item group">
+        <button (click)="toggleFaq(1)" class="faq-question w-full flex justify-between items-center p-6 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 border border-[#e5e7eb] group-hover:border-[#2eaae5]/50">
+          <h3 class="text-left font-semibold text-lg text-[#2c2c2c]">¿Qué es la neurodiversidad?</h3>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#2eaae5] transition-transform duration-300" [class.rotate-180]="openFaq === 1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div *ngIf="openFaq === 1" @slideInOut class="faq-answer overflow-hidden transition-all duration-300">
+          <div class="p-6 pt-2 bg-white rounded-b-xl">
+            <p class="text-[#4b5563]">
+              La neurodiversidad es un concepto que reconoce y celebra las variaciones naturales en el cerebro humano. Este enfoque considera condiciones como el autismo, TDAH, dislexia y otras diferencias neurológicas como parte de la diversidad humana normal, en lugar de verlas como trastornos o déficits que necesitan ser "curados". En Neurodiversos, trabajamos desde este enfoque, reconociendo las fortalezas únicas de cada persona mientras apoyamos en los desafíos específicos que puedan experimentar.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Pregunta 2 -->
+      <div class="faq-item group">
+        <button (click)="toggleFaq(2)" class="faq-question w-full flex justify-between items-center p-6 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 border border-[#e5e7eb] group-hover:border-[#2eaae5]/50">
+          <h3 class="text-left font-semibold text-lg text-[#2c2c2c]">¿Cómo sé si mi hijo/a necesita una evaluación?</h3>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#2eaae5] transition-transform duration-300" [class.rotate-180]="openFaq === 2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div *ngIf="openFaq === 2" @slideInOut class="faq-answer overflow-hidden transition-all duration-300">
+          <div class="p-6 pt-2 bg-white rounded-b-xl">
+            <p class="text-[#4b5563]">
+              Considera una evaluación si observas diferencias persistentes en áreas como comunicación, interacción social, aprendizaje, atención, o comportamiento que afectan su vida diaria. Algunos indicadores pueden ser dificultades para seguir instrucciones, problemas de lenguaje, desafíos en habilidades sociales, comportamientos repetitivos, o dificultades sensoriales. Una evaluación temprana permite identificar fortalezas y necesidades específicas para proporcionar los apoyos adecuados. Si tienes dudas, te recomendamos agendar una primera consulta para una valoración inicial.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Pregunta 3 -->
+      <div class="faq-item group">
+        <button (click)="toggleFaq(3)" class="faq-question w-full flex justify-between items-center p-6 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 border border-[#e5e7eb] group-hover:border-[#2eaae5]/50">
+          <h3 class="text-left font-semibold text-lg text-[#2c2c2c]">¿Qué especialista es el adecuado para mi caso?</h3>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#2eaae5] transition-transform duration-300" [class.rotate-180]="openFaq === 3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div *ngIf="openFaq === 3" @slideInOut class="faq-answer overflow-hidden transition-all duration-300">
+          <div class="p-6 pt-2 bg-white rounded-b-xl">
+            <p class="text-[#4b5563]">
+              La elección del especialista depende de las necesidades específicas:
+            </p>
+            <ul class="list-disc pl-5 mt-3 space-y-2 text-[#4b5563]">
+              <li><strong class="text-[#2c2c2c]">Psicólogo:</strong> Para evaluación diagnóstica, apoyo emocional, habilidades sociales y conducta.</li>
+              <li><strong class="text-[#2c2c2c]">Fonoaudiólogo:</strong> Para dificultades de comunicación, lenguaje, habla y deglución.</li>
+              <li><strong class="text-[#2c2c2c]">Terapeuta Ocupacional:</strong> Para habilidades motoras, procesamiento sensorial, autonomía y adaptación al entorno.</li>
+            </ul>
+            <p class="text-[#4b5563] mt-4">
+              En tu primera consulta, realizaremos una evaluación inicial para recomendarte el especialista o equipo interdisciplinario más adecuado para tu situación particular.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Pregunta 4 -->
+      <div class="faq-item group">
+        <button (click)="toggleFaq(4)" class="faq-question w-full flex justify-between items-center p-6 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 border border-[#e5e7eb] group-hover:border-[#2eaae5]/50">
+          <h3 class="text-left font-semibold text-lg text-[#2c2c2c]">¿Cómo son las sesiones de terapia?</h3>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#2eaae5] transition-transform duration-300" [class.rotate-180]="openFaq === 4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div *ngIf="openFaq === 4" @slideInOut class="faq-answer overflow-hidden transition-all duration-300">
+          <div class="p-6 pt-2 bg-white rounded-b-xl">
+            <p class="text-[#4b5563]">
+              Nuestras sesiones de terapia son personalizadas según las necesidades de cada persona. Generalmente duran entre 45-60 minutos y pueden ser individuales o grupales. Utilizamos un enfoque lúdico y práctico, especialmente con niños, incorporando juegos, actividades sensoriales y herramientas tecnológicas cuando es apropiado. Para adolescentes y adultos, empleamos metodologías adaptadas a sus intereses y objetivos específicos. Todas nuestras intervenciones se basan en evidencia científica y se adaptan continuamente según el progreso observado.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Pregunta 5 -->
+      <div class="faq-item group">
+        <button (click)="toggleFaq(5)" class="faq-question w-full flex justify-between items-center p-6 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 border border-[#e5e7eb] group-hover:border-[#2eaae5]/50">
+          <h3 class="text-left font-semibold text-lg text-[#2c2c2c]">¿Trabajan con seguros médicos o FONASA?</h3>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#2eaae5] transition-transform duration-300" [class.rotate-180]="openFaq === 5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div *ngIf="openFaq === 5" @slideInOut class="faq-answer overflow-hidden transition-all duration-300">
+          <div class="p-6 pt-2 bg-white rounded-b-xl">
+            <p class="text-[#4b5563]">
+              Sí, trabajamos con FONASA y algunas ISAPRES. Para FONASA, emitimos boletas que pueden ser reembolsadas según el nivel del beneficiario. Con ISAPRES, dependiendo de tu plan, puedes acceder a reembolsos parciales presentando la boleta y orden médica. También ofrecemos la opción de bonos electrónicos para mayor comodidad. Te recomendamos consultar con tu aseguradora sobre la cobertura específica para terapias de salud mental y neurodiversidad. Nuestro equipo administrativo puede orientarte sobre este proceso durante tu primera visita.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Pregunta 6 -->
+      <div class="faq-item group">
+        <button (click)="toggleFaq(6)" class="faq-question w-full flex justify-between items-center p-6 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 border border-[#e5e7eb] group-hover:border-[#2eaae5]/50">
+          <h3 class="text-left font-semibold text-lg text-[#2c2c2c]">¿Ofrecen terapia online?</h3>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#2eaae5] transition-transform duration-300" [class.rotate-180]="openFaq === 6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div *ngIf="openFaq === 6" @slideInOut class="faq-answer overflow-hidden transition-all duration-300">
+          <div class="p-6 pt-2 bg-white rounded-b-xl">
+            <p class="text-[#4b5563]">
+              Sí, ofrecemos servicios de teleterapia para quienes no pueden asistir presencialmente. Esta modalidad es especialmente útil para sesiones de seguimiento, asesorías a familias y algunas intervenciones psicológicas. Utilizamos plataformas seguras que cumplen con los estándares de confidencialidad en salud. Sin embargo, algunas terapias, especialmente las que requieren intervención sensorial o motora directa, pueden ser más efectivas de manera presencial. Durante la evaluación inicial, analizaremos si la modalidad online es adecuada para tus necesidades específicas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-16 text-center">
+      <p class="text-[#4b5563] mb-6 text-lg">¿No encuentras respuesta a tu pregunta?</p>
+      <a href="#contacto" class="inline-flex items-center justify-center bg-[#2eaae5] hover:bg-[#1e90d8] text-white px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+        </svg>
+        <span class="font-medium">Contáctanos directamente</span>
+      </a>
+    </div>
+  </div>
+</section>
