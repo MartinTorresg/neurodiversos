@@ -35,7 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/neurodiversos
+          path: dist/neurodiversos/browser
 
   deploy:
     needs: build
