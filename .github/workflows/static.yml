@@ -1,4 +1,4 @@
-name: Deploy static content to Pages
+name: Deploy Angular to GitHub Pages
 
 on:
   push:
@@ -10,41 +10,34 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
-      - name: Install dependencies (opcional, si necesitas build)
-        run: |
-          npm install
-          npm run build
-          
-      - name: Move files to root (CRUCIAL)
-        run: |
-          mkdir -p dist
-          cp -r src/* dist/ || true
-          cp src/index.html dist/ || true
-          
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-          static_site_generator: "none"
-          
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Angular
+        run: |
+          npm run build -- --base-href "/[nombre-repo]/" --configuration production
+          # Si usas rutas con Hash:
+          # npm run build -- --base-href "/[nombre-repo]/" --configuration production --output-path docs
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
-          path: 'dist'  # Cambiado a la carpeta con tus archivos
-          
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          path: 'dist/[nombre-proyecto]' # Reemplaza con el nombre de tu proyecto Angular
+
+      - name: Deploy
+        uses: actions/deploy-pages@v2
