@@ -27,15 +27,15 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build Angular project
-        run: npm run build -- --base-href="/<neurodiversos>/"
+        run: npm run build -- --base-href="/neurodiversos/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/<neurodiversos>
+          path: dist/neurodiversos
 
   deploy:
     needs: build
